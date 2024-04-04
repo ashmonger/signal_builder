@@ -10,8 +10,10 @@ jobs:
     permissions: write-all
     steps:
       - uses: actions/checkout@v3
-      - name: Build with packer
+      - name: Build with docker
         run: |
+          sudo apt install -y tree
+          tree
           sudo bash -x run.sh
       - name: GH Release
         uses: softprops/action-gh-release@v0.1.15
